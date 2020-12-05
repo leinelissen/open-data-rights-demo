@@ -4,8 +4,7 @@
   "description": "A demo for the open data rights API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "vercel dev"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Lei Nelissen",
   "license": "UNLICENSED",
