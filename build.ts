@@ -164,7 +164,7 @@ async function generateArchive() {
 /**
  * Download the OpenAPI JSON file from GitHub
  */
-function downloadOpenApiJson() {
+async function downloadOpenApiJson() {
     return new Promise((resolve, reject) => {
         const openApiJson = "https://raw.githubusercontent.com/aeon-data-requests/open-data-rights-api/main/spec/openapi.json";
 
@@ -178,5 +178,8 @@ function downloadOpenApiJson() {
     })
 }
 
-downloadOpenApiJson();
-generateArchive();
+(async function() {
+    await fs.promises.mkdir('build', { recursive: true });
+    downloadOpenApiJson();
+    generateArchive();
+})();
