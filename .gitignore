@@ -117,3 +117,6 @@ dist
 
 build
 .vercel
+
+public/openapi.json
+public/archive.zip

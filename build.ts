@@ -148,7 +148,7 @@ async function generateArchive() {
     });
     
     return new Promise(resolve => {
-        const output = fs.createWriteStream(path.join('build', 'archive.zip'));   
+        const output = fs.createWriteStream(path.join('public', 'archive.zip'));   
         const archive = archiver('zip', {
             zlib: { level: 9 } // Sets the compression level.
         });
@@ -169,7 +169,7 @@ async function downloadOpenApiJson() {
         const openApiJson = "https://raw.githubusercontent.com/aeon-data-requests/open-data-rights-api/main/spec/openapi.json";
 
         // Create a stream that resolves when it is finished
-        const file = fs.createWriteStream(path.join('build', 'openapi.json'));
+        const file = fs.createWriteStream(path.join('public', 'openapi.json'));
         file.on('finish', resolve);
         file.on('error', reject);
 
@@ -179,7 +179,7 @@ async function downloadOpenApiJson() {
 }
 
 (async function() {
-    await fs.promises.mkdir('build', { recursive: true });
+    await fs.promises.mkdir('public', { recursive: true });
     downloadOpenApiJson();
     generateArchive();
 })();
