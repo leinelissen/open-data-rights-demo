@@ -1,5 +1,6 @@
-*
-!/lib/*
-!/build/*
-!/api/*
-!/static/*
+/*
+!lib
+!build
+!api
+!static
+!vercel.json
