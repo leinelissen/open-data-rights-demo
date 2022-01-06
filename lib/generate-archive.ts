@@ -94,7 +94,7 @@ function generateData(type: ProvidedDataTypes) {
         case ProvidedDataTypes.VISITED_PAGE:
             return {
                 name: faker.lorem.word(),
-                uri: Ac(),
+                uri: faker.internet.url(),
             }
         case ProvidedDataTypes.OFF_SITE_ACTIVITY:
             return {
