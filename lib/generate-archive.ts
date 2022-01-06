@@ -56,14 +56,14 @@ function generateData(type: ProvidedDataTypes) {
             return faker.random.number();
         case ProvidedDataTypes.PHOTO:
             return {
-                url: faker.internet.url(),
+                url: faker.image.imageUrl(),
                 description: faker.lorem.sentence()
             };
         case ProvidedDataTypes.GENDER:
             // @ts-ignore
             return faker.name.gender();
         case ProvidedDataTypes.PROFILE_PICTURE:
-            return faker.internet.url();
+            return faker.image.imageUrl();
         case ProvidedDataTypes.DATE_OF_BIRTH:
             return faker.date.past(30);
         case ProvidedDataTypes.JOIN_DATE:
@@ -94,7 +94,7 @@ function generateData(type: ProvidedDataTypes) {
         case ProvidedDataTypes.VISITED_PAGE:
             return {
                 name: faker.lorem.word(),
-                uri: faker.internet.url(),
+                uri: Ac(),
             }
         case ProvidedDataTypes.OFF_SITE_ACTIVITY:
             return {
